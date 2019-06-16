@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MainWindowController">
+   <children>
+      <AnchorPane fx:id="NavAnchor" prefHeight="400.0" prefWidth="164.0" style="-fx-background-color: #4592af;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="HomeB" layoutY="28.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="164.0" style="-fx-background-color: #4592af;" text="Home" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="AutopilotB" layoutY="111.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="164.0" style="-fx-background-color: #4592af;" text="Autopilot" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="ManualB" layoutY="200.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="32.0" prefWidth="164.0" style="-fx-background-color: #4592af;" text="Manual" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="HomeAnchor" layoutX="160.0" prefHeight="400.0" prefWidth="440.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="325.0" style="-fx-background-color: #226089;" AnchorPane.bottomAnchor="350.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="142.0" layoutY="12.0" text="Flight Simulator" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="18.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+            <AnchorPane layoutX="25.0" layoutY="67.0" prefHeight="319.0" prefWidth="391.0">
+               <children>
+                  <Button fx:id="ConnectB" layoutX="27.0" layoutY="40.0" mnemonicParsing="false" onAction="#HandleConnectPopup" text="Connect To Simulator" />
+                  <Button fx:id="HomepageLoadB1" layoutX="244.0" layoutY="40.0" mnemonicParsing="false" onAction="#HandleRouteCalculatePopup" text="Route Calculator" />
+               </children></AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="AutopilotAnchor" layoutX="160.0" layoutY="1.0" prefHeight="400.0" prefWidth="440.0" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="325.0" style="-fx-background-color: #226089;" AnchorPane.bottomAnchor="350.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="147.0" layoutY="12.0" text="Autopilot Page" textFill="WHITE" AnchorPane.leftAnchor="147.0">
+                     <font>
+                        <Font name="Arial Black" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Button fx:id="AutopilotLoad" layoutX="178.0" layoutY="59.0" mnemonicParsing="false" onAction="#WriteToText" text="Load" AnchorPane.leftAnchor="190.0" />
+            <Button layoutX="118.0" layoutY="59.0" mnemonicParsing="false" onAction="#loadFromFile" text="Start" AnchorPane.leftAnchor="130.0" />
+            <Button fx:id="stopB" layoutX="261.0" layoutY="59.0" mnemonicParsing="false" onAction="#stopAutoP" text="Stop" AnchorPane.leftAnchor="250.0" />
+            <TextArea fx:id="AutopilotTextBox" layoutX="67.0" layoutY="100.0" prefHeight="245.0" prefWidth="288.0" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="67.0" />
+         </children></AnchorPane>
+      <AnchorPane fx:id="ManualAnchor" layoutX="160.0" prefHeight="400.0" prefWidth="440.0" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="325.0" style="-fx-background-color: #226089;" AnchorPane.bottomAnchor="350.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="118.0" layoutY="12.0" text="Manual Control Page" textFill="WHITE" AnchorPane.leftAnchor="118.0">
+                     <font>
+                        <Font name="Arial Black" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="120.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Circle fx:id="Outerjoystick" fill="WHITE" layoutX="100.0" layoutY="100.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" />
+                  <Circle fx:id="JoystickB" fill="DODGERBLUE" layoutX="100.0" layoutY="100.0" onMouseDragged="#mousedrag" onMouseReleased="#ExitJoystick" radius="38.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </AnchorPane>
+            <Slider fx:id="rudderSlider" blockIncrement="0.007" layoutX="103.0" layoutY="320.0" max="1.0" min="-1.0" onDragDetected="#rudderDrag" onMouseDragged="#rudderDrag" prefHeight="14.0" prefWidth="234.0" value="0.007" />
+            <Slider fx:id="throttleSlider" blockIncrement="0.01" layoutX="91.0" layoutY="110.0" max="1.0" onDragDetected="#throttleDrag" onMouseDragged="#throttleDrag" orientation="VERTICAL" prefHeight="200.0" prefWidth="14.0" />
+            <Label layoutX="33.0" layoutY="188.0" prefHeight="25.0" prefWidth="92.0" rotate="-90.0" text="Throttle" />
+            <Label layoutX="189.0" layoutY="345.0" prefHeight="17.0" prefWidth="85.0" text="Rudder" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

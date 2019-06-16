@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="256.0" prefWidth="240.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ConnectPopUpController">
+   <children>
+      <TextField fx:id="textIp" layoutX="46.0" layoutY="80.0" />
+      <TextField fx:id="textPort" layoutX="46.0" layoutY="143.0" />
+      <Text layoutX="95.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter IP" wrappingWidth="49.576171875" />
+      <Text layoutX="92.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Port" />
+      <Button layoutX="93.0" layoutY="180.0" mnemonicParsing="false" onAction="#connectToSimulator" text="Submit" />
+      <AnchorPane layoutX="43.0" layoutY="7.0" prefHeight="44.0" prefWidth="200.0" style="-fx-background-color: #4592af;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="55.0" layoutY="10.0" text="Client Connect" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font name="Arial Black" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label fx:id="warningLabel" layoutX="48.0" layoutY="225.0" text="Couldn't connect to server" textFill="RED" visible="false" />
+   </children>
+</AnchorPane>

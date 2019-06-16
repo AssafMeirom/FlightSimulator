@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import view.MapDisplayer?> 
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.RouteController">
+   <children>
+      <AnchorPane prefHeight="57.0" prefWidth="600.0" style="-fx-background-color: #226089;">
+         <children>
+            <Label layoutX="217.0" layoutY="15.0" text="Route Calculator" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="111.0" layoutY="20.0" mnemonicParsing="false" onAction="#OpenFile" text="Load Data" />
+            <Button layoutX="418.0" layoutY="18.0" mnemonicParsing="false" onAction="#HandleCalculatePopup" text="Calculate Path" />
+         </children>
+      </AnchorPane>
+ <MapDisplayer  fx:id="mapDisplayer" onMouseClicked="#putMarkOnMap" height="318.0" layoutX="31.0" layoutY="68.0" width="539.0" />  
+   </children>
+</AnchorPane>
